@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/imExit"
+        android:iconTint="@android:color/holo_red_light"
+        android:iconTintMode="add"
+        android:title="Exit"
+        app:showAsAction="always"
+        tools:icon="@android:drawable/ic_lock_power_off" />
+    <item
+        android:id="@+id/imSpinner"
+        android:title="Spinner" />
+    <item
+        android:id="@+id/imTextView"
+        android:title="TextView" />
+    <item
+        android:id="@+id/imSeekBar"
+        android:title="SeekBar" />
+    <item
+        android:id="@+id/imProgressBar"
+        android:title="ProgressBar" />
+    <item
+        android:id="@+id/imSwitch"
+        android:title="Switch" />
+    <item
+        android:id="@+id/imProgressBarH"
+        android:title="ProgressBarH" />
+    <item
+        android:id="@+id/imRatingBar"
+        android:title="RatingBar" />
+    <item
+        android:id="@+id/imCheck"
+        android:title="CheckBox" />
+    <item
+        android:id="@+id/imRadioButton"
+        android:title="RadioButton" />
+    <item
+        android:id="@+id/imButton"
+        android:title="Button" />
+    <item
+        android:id="@+id/imCheckText"
+        android:title="CheckText" />
+</menu>

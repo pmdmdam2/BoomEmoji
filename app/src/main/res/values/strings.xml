@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ControlesI</string>
+    <string name="title_activity_controls">ControlsActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string-array name="semana">
+        <item>lunes</item>
+        <item>martes</item>
+        <item>miércoles</item>
+        <item>jueves</item>
+        <item>viernes</item>
+    </string-array>
+</resources>
