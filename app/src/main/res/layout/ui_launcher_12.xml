@@ -4,6 +4,9 @@
     android:id="@+id/gl12"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:background="?attr/colorButtonNormal"
     android:columnCount="12"
     android:orientation="vertical"
-    android:rowCount="12"></GridLayout>
+    android:rowCount="12"
+    android:visibility="visible"></GridLayout>

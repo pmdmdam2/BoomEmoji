@@ -5,14 +5,17 @@ import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+
 /**
  * Created by rafa on 17/11/17.
  */
 
-public class Personaje extends android.support.v7.widget.AppCompatButton {
+public class Personaje extends android.support.v7.widget.AppCompatImageView {
     private int indice,imagen;
     private Posicion posicion;
-    private ArrayList<Personaje> adyacentes;
+    private ArrayList<Personaje> adyacentes = new ArrayList<Personaje>();
 
     public Personaje(Context context) {
         super(context);
@@ -21,6 +24,7 @@ public class Personaje extends android.support.v7.widget.AppCompatButton {
     public Personaje(Context context,int fila, int columna, int indice, int imagen){
         this(context);
         this.indice = indice;
+        this.setTag(Config.IMAGEN_SIN_PERSONAJE);
         if(imagen != Config.IMAGEN_SIN_PERSONAJE)
             this.setTag(imagen);
         this.setBackgroundResource(Config.IMAGEN_SIN_PERSONAJE);
@@ -34,8 +38,8 @@ public class Personaje extends android.support.v7.widget.AppCompatButton {
         return posicion;
     }
 
-    public void setPosicion(int posicion) {
-        this.indice = indice;
+    public void setPosicion(Posicion posicion) {
+        this.posicion = posicion;
     }
 
     public int getColumna() {
@@ -53,4 +57,6 @@ public class Personaje extends android.support.v7.widget.AppCompatButton {
     public ArrayList<Personaje> getAdyacentes() {
         return adyacentes;
     }
+
+    public int getIndice(){ return this.indice; }
 }

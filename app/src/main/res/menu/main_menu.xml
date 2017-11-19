@@ -4,8 +4,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/Opciones"
+        android:enabled="true"
         android:title="@string/menu_opciones"
-        app:showAsAction="always"
+        android:visible="true"
         tools:icon="@android:drawable/arrow_down_float">
         <menu>
             <item
@@ -32,7 +34,8 @@
             </item>
             <item
                 android:id="@+id/mnuEmojis"
-                android:title="@string/menu_selecciona_emoji" >
+                android:title="@string/menu_selecciona_emoji"
+                app:showAsAction="always">
                 <menu>
 
                     <item

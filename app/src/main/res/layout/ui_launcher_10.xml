@@ -4,6 +4,11 @@
     android:id="@+id/gl10"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="20dp"
+    android:background="?attr/colorButtonNormal"
     android:columnCount="10"
     android:orientation="vertical"
-    android:rowCount="10"></GridLayout>
+    android:rowCount="10"
+    android:visibility="visible">
+
+</GridLayout>
