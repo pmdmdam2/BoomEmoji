@@ -37,23 +37,30 @@ public class LauncherActivity extends Activity {
     public boolean onMenuItemSelected(int featureId, MenuItem item) {
         switch (item.getItemId()){
             case R.id.mnuNivel1:
-                config.setImagen(android.R.drawable.presence_audio_away);
+                config.setNivel(Config.NIVEL_PRINCIPIANTE);
                 break;
             case R.id.mnuNivel2:
-                config.setImagen(android.R.drawable.presence_video_away);
+                config.setNivel(Config.NIVEL_AMATEUR);
                 break;
             case R.id.mnuNivel3:
+                config.setNivel(Config.NIVEL_AVANZADO);
+                break;
+            case R.id.mnuImagen1:
+                config.setImagen(android.R.drawable.presence_audio_away);
+                break;
+            case R.id.mnuImagen2:
+                config.setImagen(android.R.drawable.presence_video_away);
+                break;
+            case R.id.mnuImagen3:
                 config.setImagen(android.R.drawable.presence_away);
                 break;
-            case R.id.mnuEmojis:
-                break;
             case R.id.mnuInstrucciones:
+                //TODO: mostrar cuadro de diálogo con la información del juego
                 break;
             case R.id.mnuNuevo:
                 Juego juego = new Juego(this,config);
                 if(juego.prepararTablero()) {
                     int nivel = config.getNivel();
-
                     switch (nivel) {
                         case Config.NIVEL_PRINCIPIANTE:
                             setContentView(R.layout.ui_launcher_8);
@@ -72,7 +79,7 @@ public class LauncherActivity extends Activity {
                     for (Personaje personaje : juego.getTablero())
                         gl.addView((View) personaje);
                 }else{
-                    //Mostrar error genérico, no se ha podido crear el tablero
+                    //TODO: mostrar error genérico, no se ha podido crear el tablero
                 }
 
                 break;
