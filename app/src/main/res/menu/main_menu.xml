@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="@string/menu_opciones"
+        app:showAsAction="always"
+        tools:icon="@android:drawable/arrow_down_float">
+        <menu>
+            <item
+                android:id="@+id/mnuInstrucciones"
+                android:title="@string/menu_instrucciones" />
+            <item
+                android:id="@+id/mnuNuevo"
+                android:title="@string/menu_nuevo_juego" />
+            <item
+                android:id="@+id/mnuConfig"
+                android:title="@string/menu_configuracion">
+                <menu>
+
+                    <item
+                        android:id="@+id/mnuNivel1"
+                        android:title="Principiante" />
+                    <item
+                        android:id="@+id/mnuNivel2"
+                        android:title="Amateur" />
+                    <item
+                        android:id="@+id/mnuNivel3"
+                        android:title="Avanzado" />
+                </menu>
+            </item>
+            <item
+                android:id="@+id/mnuEmojis"
+                android:title="@string/menu_selecciona_emoji" >
+                <menu>
+
+                    <item
+                        android:id="@+id/mnuImagen1"
+                        android:icon="@android:drawable/presence_audio_away"
+                        android:title="Item" />
+                    <item
+                        android:id="@+id/mnuImagen2"
+                        android:icon="@android:drawable/presence_video_away"
+                        android:title="Item" />
+                    <item
+                        android:id="@+id/mnuImagen3"
+                        android:icon="@android:drawable/presence_video_away"
+                        android:title="Item" />
+                </menu>
+            </item>
+        </menu>
+    </item>
+</menu>

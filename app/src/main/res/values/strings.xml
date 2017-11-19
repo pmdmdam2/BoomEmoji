@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BoomEmoji</string>
+    <string name="menu_instrucciones">Instrucciones</string>
+    <string name="menu_nuevo_juego">Nuevo juego</string>
+    <string name="menu_configuracion">Configuración</string>
+    <string name="menu_selecciona_emoji">Emojis</string>
+    <string name="menu_opciones">Opciones</string>
+    <string name="instrucciones_juego">El juego es una réplica del famoso juego \'Buscaminas\'. Hay que descubrir
+        todas las posicioens del tablero sin levantar una posición en la que haya un Emoji. Se dispone de tres
+        niveles: principiante, amateur y avanzado. ></string>
+</resources>
