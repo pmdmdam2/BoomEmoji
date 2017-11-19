@@ -58,32 +58,35 @@ public class LauncherActivity extends Activity {
                 //TODO: mostrar cuadro de diálogo con la información del juego
                 break;
             case R.id.mnuNuevo:
-                Juego juego = new Juego(this,config);
-                if(juego.prepararTablero()) {
-                    int nivel = config.getNivel();
-                    switch (nivel) {
-                        case Config.NIVEL_PRINCIPIANTE:
-                            setContentView(R.layout.ui_launcher_8);
-                            gl = (GridLayout) findViewById(R.id.gl8);
-                            break;
-                        case Config.NIVEL_AMATEUR:
-                            setContentView(R.layout.ui_launcher_10);
-                            gl = (GridLayout) findViewById(R.id.gl10);
-                            break;
-                        case Config.TABLERO_NIVEL_AVANZADO:
-                            setContentView(R.layout.ui_launcher_12);
-                            gl = (GridLayout) findViewById(R.id.gl12);
-                            break;
-                    }
-
-                    for (Personaje personaje : juego.getTablero())
-                        gl.addView((View) personaje);
-                }else{
-                    //TODO: mostrar error genérico, no se ha podido crear el tablero
-                }
+                nuevoJuego();
 
                 break;
         }
         return super.onMenuItemSelected(featureId, item);
+    }
+    private void nuevoJuego(){
+        Juego juego = new Juego(this,config);
+        if(juego.prepararTablero()) {
+            int nivel = config.getNivel();
+            switch (nivel) {
+                case Config.NIVEL_PRINCIPIANTE:
+                    setContentView(R.layout.ui_launcher_8);
+                    gl = (GridLayout) findViewById(R.id.gl8);
+                    break;
+                case Config.NIVEL_AMATEUR:
+                    setContentView(R.layout.ui_launcher_10);
+                    gl = (GridLayout) findViewById(R.id.gl10);
+                    break;
+                case Config.TABLERO_NIVEL_AVANZADO:
+                    setContentView(R.layout.ui_launcher_12);
+                    gl = (GridLayout) findViewById(R.id.gl12);
+                    break;
+            }
+
+            for (Personaje personaje : juego.getTablero())
+                gl.addView((View) personaje);
+        }else{
+            //TODO: mostrar error genérico, no se ha podido crear el tablero
+        }
     }
 }
