@@ -1,6 +1,8 @@
 package edu.pmdm.boomemoji;
 
 import android.content.Context;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
@@ -12,7 +14,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
  * Created by rafa on 17/11/17.
  */
 
-public class Personaje extends android.support.v7.widget.AppCompatImageView {
+public class Personaje extends android.support.v7.widget.AppCompatButton {
     private int indice,imagen;
     private Posicion posicion;
     private ArrayList<Personaje> adyacentes = new ArrayList<Personaje>();
@@ -29,6 +31,7 @@ public class Personaje extends android.support.v7.widget.AppCompatImageView {
             this.setTag(imagen);
         this.setBackgroundResource(Config.IMAGEN_SIN_PERSONAJE);
         this.imagen = imagen;
+
         this.posicion = new Posicion(fila,columna);
     }
 

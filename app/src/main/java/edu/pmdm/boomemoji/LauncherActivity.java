@@ -111,8 +111,8 @@ public class LauncherActivity extends Activity {
                     vwL8.setVisibility(View.VISIBLE);
                     vwL8.bringToFront();
                     gl = (GridLayout) findViewById(R.id.gl8);
-//                    gl.setColumnCount(Config.TABLERO_NIVEL_PRINCIPIANTE);
-//                    gl.setRowCount(Config.TABLERO_NIVEL_PRINCIPIANTE);
+                    gl.setColumnCount(Config.TABLERO_NIVEL_PRINCIPIANTE);
+                    gl.setRowCount(Config.TABLERO_NIVEL_PRINCIPIANTE);
                     break;
                 case Config.NIVEL_AMATEUR:
                     vwL10.setVisibility(View.VISIBLE);
@@ -134,10 +134,13 @@ public class LauncherActivity extends Activity {
                 GridLayout.LayoutParams param =new GridLayout.LayoutParams();
 
                 param.setGravity(Gravity.TOP);
-                param.width = WRAP_CONTENT;
-                param.height = WRAP_CONTENT;
-//                param.columnSpec = GridLayout.spec(personaje.getColumna());
-//                param.rowSpec = GridLayout.spec(personaje.getFila());
+                param.height=50;
+                param.width=50;
+
+//                param.columnSpec = GridLayout.spec(GridLayout.UNDEFINED,50,1);
+//                param.rowSpec = GridLayout.spec(GridLayout.UNDEFINED,50,1);
+////                param.columnSpec = GridLayout.spec(personaje.getColumna());
+////                param.rowSpec = GridLayout.spec(personaje.getFila());
 
                 personaje.setLayoutParams(param);
 
