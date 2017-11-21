@@ -1,6 +1,7 @@
 package edu.pmdm.boomemoji;
 
 import android.content.Context;
+import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -17,7 +18,6 @@ public final class Juego {
     private Context context;
     private Config config;
     private ArrayList<Personaje> tablero;
-    private ArrayList<Personaje> adyacentes;
 
     public Juego(Context context,Config config) {
         this.config = config;
@@ -48,6 +48,7 @@ public final class Juego {
             }
             calcularAdyacentes();
         }catch (Exception e){
+            e.printStackTrace();
             return false; 
         }
         return true;
@@ -111,6 +112,13 @@ public final class Juego {
     }
 
     public ArrayList<Personaje> getTablero(){
+        return tablero;
+    }
+    public ArrayList<AppCompatButton> getTableroView(){
+        ArrayList<AppCompatButton> tablero = new ArrayList<AppCompatButton>();
+        for (Personaje personaje:this.tablero) {
+            tablero.add((AppCompatButton)personaje);
+        }
         return tablero;
     }
 }

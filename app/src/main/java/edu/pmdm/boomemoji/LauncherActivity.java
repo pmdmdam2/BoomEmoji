@@ -2,16 +2,18 @@ package edu.pmdm.boomemoji;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.Gravity;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatImageButton;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.GridLayout;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.GridLayout.LayoutParams;
-import java.util.zip.Inflater;
+import android.widget.GridView;
+
+import java.util.ArrayList;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -22,8 +24,10 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 public class LauncherActivity extends Activity {
     private Config config;
-    private GridLayout gl;
+    private GridView gv;
     private View vwMain,vwL8, vwL10,vwL12;
+    private ArrayAdapter<AppCompatButton> adapter;
+    private ArrayList itemsToSave;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,45 +114,45 @@ public class LauncherActivity extends Activity {
                 case Config.NIVEL_PRINCIPIANTE:
                     vwL8.setVisibility(View.VISIBLE);
                     vwL8.bringToFront();
-                    gl = (GridLayout) findViewById(R.id.gl8);
-                    gl.setColumnCount(Config.TABLERO_NIVEL_PRINCIPIANTE);
-                    gl.setRowCount(Config.TABLERO_NIVEL_PRINCIPIANTE);
+                    gv = (GridView) findViewById(R.id.gv8);
+
                     break;
                 case Config.NIVEL_AMATEUR:
                     vwL10.setVisibility(View.VISIBLE);
                     vwL10.bringToFront();
-                    gl = (GridLayout) findViewById(R.id.gl10);
-                    gl.setColumnCount(Config.TABLERO_NIVEL_AMATEUR);
-                    gl.setRowCount(Config.TABLERO_NIVEL_AMATEUR);
+                    gv = (GridView) findViewById(R.id.gv10);
+
                     break;
-                case Config.TABLERO_NIVEL_AVANZADO:
+                case Config.NIVEL_AVANZADO:
                     vwL12.setVisibility(View.VISIBLE);
                     vwL12.bringToFront();
-                    gl = (GridLayout) findViewById(R.id.gl12);
-                    gl.setColumnCount(Config.TABLERO_NIVEL_AVANZADO);
-                    gl.setRowCount(Config.TABLERO_NIVEL_AVANZADO);
+                    gv = (GridView) findViewById(R.id.gv12);
+
                     break;
             }
-
-            for (Personaje personaje : juego.getTablero()) {
-                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-
-                param.setGravity(Gravity.TOP);
-                param.height=50;
-                param.width=50;
-
-//                param.columnSpec = GridLayout.spec(GridLayout.UNDEFINED,50,1);
-//                param.rowSpec = GridLayout.spec(GridLayout.UNDEFINED,50,1);
-////                param.columnSpec = GridLayout.spec(personaje.getColumna());
-////                param.rowSpec = GridLayout.spec(personaje.getFila());
-
-                personaje.setLayoutParams(param);
-
-                gl.addView(personaje);
-            }
+            adapter = new ArrayAdapter<AppCompatButton>(this,R.layout.ui_item,juego.getTableroView());
+//            itemsToSave = new ArrayList();
+//            itemsToSave.add(0,adapter);
+//            itemsToSave.add(1,gv);
+            gv.setAdapter(adapter);
 
         }else{
             //TODO: mostrar error genérico, no se ha podido crear el tablero
         }
     }
+
+//    @Override
+//    protected void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        outState.putParcelableArrayList("savedInstances", itemsToSave);
+//    }
+//
+//    @Override
+//    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+//        super.onRestoreInstanceState(savedInstanceState);
+//        itemsToSave = (ArrayList)savedInstanceState.get("savedInstances");
+//        adapter = (GridAdapter)itemsToSave.get(0);
+//        gv = (GridView)itemsToSave.get(1);
+//        gv.setAdapter(adapter);
+//    }
 }

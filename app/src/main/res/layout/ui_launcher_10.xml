@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/gl10"
+    android:id="@+id/l10"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
-    android:background="?attr/colorButtonNormal"
-    android:columnCount="10"
-    android:orientation="vertical"
-    android:rowCount="10"
-    android:visibility="visible">
+    android:orientation="vertical">
 
-</GridLayout>
+    <GridView
+        android:id="@+id/gv10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="10"
+        android:stretchMode="columnWidth" />
+</LinearLayout>

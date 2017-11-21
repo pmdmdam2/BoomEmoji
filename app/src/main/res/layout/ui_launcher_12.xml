@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/gl12"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/l12"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="20dp"
-    android:background="?attr/colorButtonNormal"
-    android:columnCount="12"
-    android:orientation="vertical"
-    android:rowCount="12"
-    android:visibility="visible"></GridLayout>
+    android:orientation="vertical">
+
+    <GridView
+        android:id="@+id/gv12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:numColumns="12"
+        android:stretchMode="columnWidth" />
+
+</LinearLayout>

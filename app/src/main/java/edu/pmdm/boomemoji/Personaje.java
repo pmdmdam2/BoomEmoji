@@ -1,20 +1,17 @@
 package edu.pmdm.boomemoji;
 
 import android.content.Context;
-import android.view.ViewGroup;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatImageButton;
 import android.widget.Button;
-import android.widget.ImageButton;
 
 import java.util.ArrayList;
-
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
 /**
  * Created by rafa on 17/11/17.
  */
 
-public class Personaje extends android.support.v7.widget.AppCompatButton {
+public class Personaje extends AppCompatButton {
     private int indice,imagen;
     private Posicion posicion;
     private ArrayList<Personaje> adyacentes = new ArrayList<Personaje>();
@@ -26,15 +23,12 @@ public class Personaje extends android.support.v7.widget.AppCompatButton {
     public Personaje(Context context,int fila, int columna, int indice, int imagen){
         this(context);
         this.indice = indice;
+        this.imagen = Config.IMAGEN_SIN_PERSONAJE;
         this.setTag(Config.IMAGEN_SIN_PERSONAJE);
         if(imagen != Config.IMAGEN_SIN_PERSONAJE)
             this.setTag(imagen);
-        this.setBackgroundResource(Config.IMAGEN_SIN_PERSONAJE);
-        this.imagen = imagen;
-
         this.posicion = new Posicion(fila,columna);
     }
-
     public int getImagen(){ return this.imagen; }
 
     public Posicion getPosicion() {
@@ -62,4 +56,5 @@ public class Personaje extends android.support.v7.widget.AppCompatButton {
     }
 
     public int getIndice(){ return this.indice; }
+
 }

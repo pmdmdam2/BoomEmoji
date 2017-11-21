@@ -35,7 +35,8 @@ public class Config {
     }
 
     public void setNivel(int nivel) {
-        this.nivelTablero=this.nivel==NIVEL_PRINCIPIANTE?TABLERO_NIVEL_PRINCIPIANTE:this.nivel==NIVEL_AMATEUR?TABLERO_NIVEL_AMATEUR:TABLERO_NIVEL_AVANZADO;
+        this.nivelTablero= nivel==NIVEL_PRINCIPIANTE?TABLERO_NIVEL_PRINCIPIANTE:
+                nivel==NIVEL_AMATEUR?TABLERO_NIVEL_AMATEUR:TABLERO_NIVEL_AVANZADO;
         this.nivel = nivel;
     }
 
