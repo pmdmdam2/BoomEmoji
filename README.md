@@ -1,2 +1,10 @@
-# dam2
-Este repositorio ha sido creado con la intención de aprender a desarrollar software bajo control de versiones. Para los proyectos de grupo se crearán proyectos software bajo control de código. Los alumnos se agruparán por parejas, tendrán que crear cuentas de usuario en Github para poder trabajar los proyectos. Más adelante se comunicarán los proyectos que se realizarán bajo control de código. 
+# BoomEmoji
+
+Práctica 2: Encuentra hipotenochas
+
+Más info en: readme.pdf
+https://github.com/pmdmdam2/BoomEmoji/blob/master/readme.pdf
+
+IES ANTONIO GALA - Palma del Río
+2º DAM
+PMDM

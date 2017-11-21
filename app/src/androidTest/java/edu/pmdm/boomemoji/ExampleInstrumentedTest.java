@@ -1,4 +1,4 @@
-package edu.pmdm.controlesi;
+package edu.pmdm.boomemoji;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("edu.pmdm.controlesi", appContext.getPackageName());
+        assertEquals("edu.pmdm.boomemoji", appContext.getPackageName());
     }
 }

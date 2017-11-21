@@ -1,5 +1,0 @@
-<application>
-  <component name="NotificationConfiguration">
-    <notification groupId="Emulator" shouldLog="false" />
-  </component>
-</application>

@@ -1,4 +1,4 @@
-package edu.pmdm.controlesi;
+package edu.pmdm.boomemoji;
 
 import org.junit.Test;
 
