@@ -1,6 +1,9 @@
 package edu.pmdm.boomemoji;
 
+import android.app.Activity;
 import android.content.Context;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatImageButton;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -35,17 +38,16 @@ public class GridAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-//        AppCompatImageButton button=null;
-//        View gview = new View(this.context);
-//        if(view==null){
-//            gview = ((Activity)this.context).getLayoutInflater().inflate(R.layout.ui_item,null);
-//            button = (AppCompatImageButton)gview.findViewById(R.id.imageButton);
-//            button.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//            button.setBackgroundResource(tablero.get(i).getImagen());
-//            button.setTag(tablero.get(i).getTag());
-//        }else{
-//            return view;
-//        }
+        AppCompatImageButton button=null;
+        View gview = new View(this.context);
+        if(view==null){
+            gview = ((Activity)this.context).getLayoutInflater().inflate(R.layout.ui_item,null);
+            button = (AppCompatImageButton)gview.findViewById(R.id.acButton);
+            button.setBackgroundResource(tablero.get(i).getImagen());
+            button.setTag(tablero.get(i).getTag());
+        }else{
+            return view;
+        }
         return view;
     }
 }

@@ -66,48 +66,31 @@ public final class Juego {
         return personaje;
     }
     private void calcularAdyacentes(){
+        ArrayList<Posicion> posiciones = new ArrayList<Posicion>();
         ArrayList<Personaje> adyacentes;
-        Personaje personajeAdayacente;
-
+        Personaje adyacente;
         for(Personaje personaje:tablero) {
+            Posicion pos = personaje.getPosicion();
+            posiciones.add(new Posicion(pos.getFila()-1,pos.getColumna()));
+            posiciones.add(new Posicion(pos.getFila()+1, pos.getColumna()));
+            posiciones.add(new Posicion(pos.getFila(),pos.getColumna()-1));
+            posiciones.add(new Posicion(pos.getFila(),pos.getColumna()+1));
+            posiciones.add(new Posicion(pos.getFila()-1, pos.getColumna()-1));
+            posiciones.add(new Posicion(pos.getFila()+1,pos.getColumna()+1));
             adyacentes = new ArrayList<Personaje>();
-            if (personaje.getFila() > 0) {
-                personajeAdayacente = getPersonajePosicion(personaje.getFila() - 1, personaje.getColumna());
-                if (Integer.valueOf(personajeAdayacente.getTag().toString()) != Config.IMAGEN_SIN_PERSONAJE)
-                    adyacentes.add(personajeAdayacente);
-
-                if (personaje.getFila() < config.getNivelTablero() - 1) {
-                    personajeAdayacente = getPersonajePosicion(personaje.getFila() + 1, personaje.getColumna());
-                    if (Integer.valueOf(personajeAdayacente.getTag().toString()) != Config.IMAGEN_SIN_PERSONAJE)
-                        adyacentes.add(personajeAdayacente);
-                }
-            } else {
-                //primera fila
-                personajeAdayacente = getPersonajePosicion(personaje.getFila() + 1, personaje.getColumna());
-                if (Integer.valueOf(personajeAdayacente.getTag().toString()) != Config.IMAGEN_SIN_PERSONAJE)
-                    adyacentes.add(personajeAdayacente);
-            }
-
-            if (personaje.getFila() > 0) {
-                personajeAdayacente = getPersonajePosicion(personaje.getFila(), personaje.getColumna() - 1);
-                if (Integer.valueOf(personajeAdayacente.getTag().toString()) != Config.IMAGEN_SIN_PERSONAJE)
-                    adyacentes.add(personajeAdayacente);
-
-                if (personaje.getFila() < config.getNivelTablero() - 1) {
-                    personajeAdayacente = getPersonajePosicion(personaje.getFila(), personaje.getColumna() + 1);
-                    if (Integer.valueOf(personajeAdayacente.getTag().toString()) != Config.IMAGEN_SIN_PERSONAJE)
-                        adyacentes.add(personajeAdayacente);
-                }
-            } else {
-                //primera columna
-                personajeAdayacente = getPersonajePosicion(personaje.getFila(), personaje.getColumna() + 1);
-                if (Integer.valueOf(personajeAdayacente.getTag().toString()) != Config.IMAGEN_SIN_PERSONAJE)
-                    adyacentes.add(personajeAdayacente);
+            for (Posicion posicion:posiciones) {
+                adyacente = getPersonajePosicion(posicion.getFila(),posicion.getColumna());
+                if(adyacente!=null && Integer.valueOf(adyacente.getTag().toString()) != Config.IMAGEN_SIN_PERSONAJE)
+                    adyacentes.add(adyacente);
             }
             personaje.setAdyacentes(adyacentes);
         }
     }
+
     private Personaje getPersonajePosicion(int fila, int columna){
+        if(fila>config.getNivelTablero() || columna > config.getNivelTablero()
+                || fila < 0 || columna < 0) return null;
+
         return tablero.get(fila * config.getNivelTablero() + columna);
     }
 
